@@ -8,8 +8,6 @@ export const Form = () => {
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.target;
-    // Wywołujemy generator akcji i przekazujemy tekst zadania dla payload
-    // Wysyłamy wynik – akcję utworzenia zadania
     dispatch(addContact(form.elements.name.value, form.elements.number.value));
     form.reset();
   };
