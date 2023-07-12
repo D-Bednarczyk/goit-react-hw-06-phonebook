@@ -2,9 +2,7 @@ import css from './Filter.module.css';
 import { useDispatch } from 'react-redux';
 import { filterContacts } from '..//redux/actions';
 
-import { useSelector } from 'react-redux';
-
-export const Filter = props => {
+export const Filter = () => {
   const dispatch = useDispatch();
 
   const handleFilterChange = event => {

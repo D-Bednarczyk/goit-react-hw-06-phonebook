@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 import { Form } from './Form';
 import { Filter } from './Filter';
 import { ContactList } from './ContactList';
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 
 export const App = () => {
   const [contacts, setContacts] = useState(() => {

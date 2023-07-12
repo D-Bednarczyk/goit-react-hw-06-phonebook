@@ -1,6 +1,3 @@
-import { statusFilters } from './constants';
-import { combineReducers } from 'redux';
-
 const initialState = {
   contacts: [
     { key: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -15,6 +12,10 @@ export const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'filters/filterContacts': {
       return { ...state, filter: action.payload };
+    }
+
+    case 'tasks/addContact': {
+      return { ...state, contacts: [...state.contacts, action.payload] };
     }
 
     default:

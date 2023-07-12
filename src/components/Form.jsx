@@ -1,9 +1,21 @@
-import PropTypes from 'prop-types';
 import css from './Form.module.css';
+import { addContact } from 'redux/actions';
+import { useDispatch } from 'react-redux';
 
-export const Form = props => {
+export const Form = () => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    const form = event.target;
+    // Wywołujemy generator akcji i przekazujemy tekst zadania dla payload
+    // Wysyłamy wynik – akcję utworzenia zadania
+    dispatch(addContact(form.elements.name.value, form.elements.number.value));
+    form.reset();
+  };
+
   return (
-    <form className={css.form} onSubmit={props.submitFunc}>
+    <form className={css.form} onSubmit={handleSubmit}>
       <label>Name</label>
       <input
         className={css.formInput}
@@ -26,5 +38,3 @@ export const Form = props => {
     </form>
   );
 };
-
-Form.propTypes = { submitFunc: PropTypes.func.isRequired };
