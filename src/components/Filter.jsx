@@ -1,6 +1,7 @@
 import css from './Filter.module.css';
 import { useDispatch } from 'react-redux';
 import { filterContacts } from '..//redux/actions';
+
 import { useSelector } from 'react-redux';
 
 export const Filter = props => {
@@ -10,7 +11,7 @@ export const Filter = props => {
     dispatch(filterContacts(event.target.value));
   };
 
-  console.log(useSelector(state => state.filter));
+  //console.log(useSelector(state => state.filter));
   return (
     <input
       className={css.filterInput}
