@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid';
 import { Form } from './Form';
 import { Filter } from './Filter';
 import { ContactList } from './ContactList';
+import { useSelector } from 'react-redux';
 
 export const App = () => {
   const [contacts, setContacts] = useState(() => {
@@ -17,24 +18,19 @@ export const App = () => {
     );
   });
 
-  const [filter, setFilter] = useState('');
+  //const [filter, setFilter] = useState('');
 
   console.log(contacts);
 
-  const handleDelete = id => {
+  /*   const handleDelete = id => {
     setContacts(contacts.filter(contact => contact.key !== id));
-  };
+  }; */
 
-  const handleChange = evt => {
-    setFilter(evt.target.value);
-    console.log(filter);
-  };
-
-  const filterItems = () => {
+  /* const filterItems = () => {
     return contacts.filter(el =>
       el.name.toLowerCase().includes(filter.toLowerCase())
     );
-  };
+  }; */
 
   const handleSubmit = evt => {
     evt.preventDefault();
@@ -63,11 +59,8 @@ export const App = () => {
       <h2>Phonebook</h2>
       <Form submitFunc={handleSubmit}></Form>
       <h2>Contacts</h2>
-      <Filter filterFunc={handleChange}></Filter>
-      <ContactList
-        contactFunc={filterItems}
-        deleteFunc={handleDelete}
-      ></ContactList>
+      <Filter />
+      <ContactList></ContactList>
     </div>
   );
 };
