@@ -1,14 +1,22 @@
 import css from './Form.module.css';
 import { addContact } from '../redux/slices/contactsSlice';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 export const Form = () => {
   const dispatch = useDispatch();
+  const ContactsArray = useSelector(state => state.contacts);
 
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.target;
-    dispatch(addContact(form.elements.name.value, form.elements.number.value));
+
+    if (ContactsArray.map(el => el.name).includes(form.elements.name.value))
+      alert(`${form.elements.name.value} is already in contacts`);
+    else
+      dispatch(
+        addContact(form.elements.name.value, form.elements.number.value)
+      );
     form.reset();
   };
 
