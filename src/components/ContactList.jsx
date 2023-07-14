@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 export const ContactList = () => {
   const ContactsArray = useSelector(state => state.contacts);
+  console.log(ContactsArray);
 
   return (
     <ul className={css.contactsItem}>

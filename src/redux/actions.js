@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 
-export const addContact = (name, phone) => {
+/* export const addContact = (name, phone) => {
   return {
     type: 'tasks/addContact',
     payload: {
@@ -24,3 +24,4 @@ export const filterContacts = text => {
     payload: text,
   };
 };
+ */

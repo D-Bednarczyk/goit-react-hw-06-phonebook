@@ -1,4 +1,4 @@
-const initialState = {
+/* const initialState = {
   contacts: [
     { key: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
     { key: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
@@ -22,3 +22,4 @@ export const rootReducer = (state = initialState, action) => {
       return state;
   }
 };
+ */
